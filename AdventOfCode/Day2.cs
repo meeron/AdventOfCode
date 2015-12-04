@@ -13,7 +13,8 @@ namespace AdventOfCode
 
         public Day2()
         {
-            _input = File.ReadAllLines(@"c:\Users\miron\Documents\Visual Studio 2013\Projects\AdventOfCode\inputs\Day2-input.txt");
+            _input = File.ReadAllLines(@"f:\projects\AdventOfCode\inputs\Day2-input.txt");
+            //_input = File.ReadAllLines(@"c:\Users\miron\Documents\Visual Studio 2013\Projects\AdventOfCode\inputs\Day2-input.txt");
         }
 
         public int SolvePuzzle1()
@@ -23,7 +24,7 @@ namespace AdventOfCode
 
         public int SolvePuzzle2()
         {
-            throw new NotImplementedException();
+            return this._input.Select(x => Dimension.Parse(x)).Sum(x => x.Ribbon);
         }
     }
 
@@ -60,12 +61,12 @@ namespace AdventOfCode
 
         public int Volume { get { return L * W * H; } }
 
-        //public int Ribbon
-        //{
-        //    get
-        //    {
-
-        //    }
-        //}
+        public int Ribbon
+        {
+            get
+            {
+                return new int[] { L, W, H }.OrderBy(x => x).Take(2).Select(x => x * 2).Sum() + this.Volume;
+            }
+        }
     }
 }

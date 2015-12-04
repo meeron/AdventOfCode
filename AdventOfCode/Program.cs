@@ -19,7 +19,7 @@ namespace AdventOfCode
             Console.WriteLine("Puzzle 2 output: {0}", day1.SolvePuzzle2());
             Console.WriteLine("---------------------Day 2----------------");
             Console.WriteLine("Puzzle 1 output: {0}", day2.SolvePuzzle1());
-            //Console.WriteLine("Puzzle 2 output: {0}", day1.SolvePuzzle2());
+            Console.WriteLine("Puzzle 2 output: {0}", day2.SolvePuzzle2());
 
             Console.ReadLine();
         }
